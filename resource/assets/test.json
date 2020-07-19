@@ -1,0 +1,77 @@
+{"mc":{
+	"test":{
+		"frameRate":24,
+		"events":[
+			
+			],
+		"frames":[
+			
+			]
+},"1":{
+		"frameRate":12,
+		"labels":[
+			{
+				"name":"attack1",
+				"frame":2,
+				"end":3
+			},
+			{
+				"name":"attack2",
+				"frame":3,
+				"end":4
+			},
+			{
+				"name":"move1",
+				"frame":1,
+				"end":2
+			},
+			{
+				"name":"move2",
+				"frame":2,
+				"end":3
+			},
+			{
+				"name":"move",
+				"frame":1,
+				"end":3
+			},
+			{
+				"name":"attack",
+				"frame":2,
+				"end":4
+			}
+			
+		],
+		"events":[
+			
+			],
+		"frames":[
+			
+			{
+			"res":"8EB81DA6",
+			"x":0,
+			"y":0
+			},
+			{
+			"res":"95D1385B",
+			"x":0,
+			"y":0
+			},
+			{
+			"res":"8F8A5A2C",
+			"x":0,
+			"y":0
+			},
+			{
+			"res":"77975F50",
+			"x":0,
+			"y":0
+			}
+			]
+}},
+	"res":{
+		"95D1385B":{"x":1,"y":1,"w":106,"h":117},
+		"8EB81DA6":{"x":109,"y":1,"w":106,"h":117},
+		"8F8A5A2C":{"x":1,"y":120,"w":106,"h":117},
+		"77975F50":{"x":109,"y":120,"w":106,"h":117}
+	}}
