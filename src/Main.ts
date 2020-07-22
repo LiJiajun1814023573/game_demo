@@ -109,8 +109,8 @@ class Main extends eui.UILayer {
         sky.width = stageW;
         sky.height = stageH;
 
-        this.hero1 = new Hero(1);
-        this.hero2 = new Hero(0);
+        this.hero1 = new Hero(1,"foot");
+        this.hero2 = new Hero(0,"foot");
         var mc1 = this.hero1.mc;
         var mc2 = this.hero2.mc;
         this.stage.frameRate = 6;
