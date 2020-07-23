@@ -93,8 +93,7 @@ class Main extends eui.UILayer {
 
         })
     }
-    public hero1: Hero;
-    public hero2: Hero;
+
     private textfield: egret.TextField;
     /**
      * 创建场景界面
@@ -102,26 +101,14 @@ class Main extends eui.UILayer {
      */
 
     protected createGameScene(): void {
-        let sky = this.createBitmapByName("bg_jpg");
-        this.addChild(sky);
-        let stageW = this.stage.stageWidth;
-        let stageH = this.stage.stageHeight;
-        sky.width = stageW;
-        sky.height = stageH;
-
-        this.hero1 = new Hero(1,"foot");
-        this.hero2 = new Hero(0,"foot");
-        var mc1 = this.hero1.mc;
-        var mc2 = this.hero2.mc;
         this.stage.frameRate = 6;
-        this.addEventListener(egret.Event.ENTER_FRAME,this.setP,this);
-        this.addChild(mc1);
-        this.addChild(mc2);
+        SceneManager.Instance.rootLayer = this;
+        let s:StartScene = new StartScene();
+        SceneManager.Instance.changeScene(s);
+
+
     }
-    public setP(){
-        this.hero1.setTargetPosition(this.hero2.mc.x,this.hero2.mc.y);
-        this.hero2.setTargetPosition(this.hero1.mc.x,this.hero1.mc.y);
-    }
+
     /**
      * 根据name关键字创建一个Bitmap对象。name属性请参考resources/resource.json配置文件的内容。
      * Create a Bitmap object according to name keyword.As for the property of name please refer to the configuration file of resources/resource.json.

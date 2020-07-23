@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="GameSceneSkin" width="480" height="600" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" >
+	<w:Config id="1737a62b483" ></w:Config>
+	<e:Image source="bg_jpg" x="0" y="0" width="480" height="600"/>
+	<e:Button id="game_button" label="结算" x="190" y="520"/>
+</e:Skin>

@@ -166,24 +166,10 @@ var Main = (function (_super) {
      * Create scene interface
      */
     Main.prototype.createGameScene = function () {
-        var sky = this.createBitmapByName("bg_jpg");
-        this.addChild(sky);
-        var stageW = this.stage.stageWidth;
-        var stageH = this.stage.stageHeight;
-        sky.width = stageW;
-        sky.height = stageH;
-        this.hero1 = new Hero(1, "foot");
-        this.hero2 = new Hero(0, "foot");
-        var mc1 = this.hero1.mc;
-        var mc2 = this.hero2.mc;
         this.stage.frameRate = 6;
-        this.addEventListener(egret.Event.ENTER_FRAME, this.setP, this);
-        this.addChild(mc1);
-        this.addChild(mc2);
-    };
-    Main.prototype.setP = function () {
-        this.hero1.setTargetPosition(this.hero2.mc.x, this.hero2.mc.y);
-        this.hero2.setTargetPosition(this.hero1.mc.x, this.hero1.mc.y);
+        SceneManager.Instance.rootLayer = this;
+        var s = new StartScene();
+        SceneManager.Instance.changeScene(s);
     };
     /**
      * 根据name关键字创建一个Bitmap对象。name属性请参考resources/resource.json配置文件的内容。

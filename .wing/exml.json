@@ -1,0 +1,17 @@
+{
+    "1737954fa1a": {
+        "path": "..\\resource\\eui_skins\\StartScene.ts",
+        "class": "StartScene",
+        "parentPath": ""
+    },
+    "1737a62b483": {
+        "path": "GameScene.ts",
+        "class": "GameScene",
+        "parentPath": ""
+    },
+    "1737a704065": {
+        "path": "EndScene.ts",
+        "class": "EndScene",
+        "parentPath": ""
+    }
+}
