@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="StartSceneSkin" width="480" height="600" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*" >
+	<w:Config id="1737954fa1a" ></w:Config>
+	<e:Group width="480" height="600" x="0" y="0" anchorOffsetX="0" anchorOffsetY="0">
+		<e:Image source="bg_jpg" x="0" y="0" width="480" height="600"/>
+		<e:Button id="start_button" label="进入" x="190" y="275"/>
+	</e:Group>
+</e:Skin>
