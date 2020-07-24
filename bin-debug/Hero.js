@@ -57,23 +57,25 @@ var Hero = (function () {
             archer: "bowman_png"
         };
         this.positions = {
-            1: [20, 50],
-            2: [30, 100],
-            3: [40, 150]
+            1: [80, 50],
+            2: [40, 80],
         };
         this.mc = this.createEuiImageByName(this.img_sources[name]);
+        //测试start
         console.log(this.img_sources['foot']);
         console.log(RES.getRes("swordman_png"));
+        //end
         var mc = this.mc;
         mc.addEventListener(egret.Event.ENTER_FRAME, this.attackAndCheck, this);
-        mc.width = 20;
-        mc.height = 20;
+        mc.width = 100;
+        mc.height = 100;
         mc.top = this.positions[position][0];
         if (team == 1) {
             mc.left = this.positions[position][1];
         }
         else {
             mc.right = this.positions[position][1];
+            mc.scaleX = -1;
         }
         this.hp = this.heroMessage[name].hp;
         this.hpRecovery = this.heroMessage[name].hpRecovery;

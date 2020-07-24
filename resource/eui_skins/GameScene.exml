@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <e:Skin class="GameSceneSkin" width="480" height="600" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" >
 	<w:Config id="1737a62b483" ></w:Config>
-	<e:Image source="bg_jpg" x="0" y="0" width="100%" height="100%"/>
-	<e:Button id="game_button" label="结算" horizontalCenter="0" bottom="20"/>
+
+
+	<e:Group top="0" bottom="0" left="0" right="0">
+		<e:Group width="100%" height="50%" x="0" y="0">
+			<e:Image id="game_background" source="platformer_background_2_png" x="0" y="0" width="100%" height="100%" anchorOffsetY="0"/>
+			<e:Image id="timer" source="time_png" width="22%" height="10%" x="191" y="37" horizontalCenter="0" top="10"/>
+		</e:Group>
+		<e:Group width="100%" height="50%" x="0">
+			<e:Image width="100%" height="100%" x="3" source="message_container_png" y="0"/>
+			<e:Button id="game_button" label="" width="50" height="50" bottom="20" horizontalCenter="0" locked="true">
+			<e:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="accept_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+			</e:skinName>
+			</e:Button>
+			<e:Group bottom="40" top="40" left="80" right="80">
+				<e:Image id="first_hero" width="20%" height="33%" left="20" top="20"/>
+				<e:Image id="second_hero" width="20%" height="33%" left="20" bottom="20"/>
+			</e:Group>
+		</e:Group>
+		<e:layout>
+			<e:VerticalLayout gap="0"/>
+		</e:layout>
+	</e:Group>
 </e:Skin>
