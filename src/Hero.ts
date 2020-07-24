@@ -4,6 +4,7 @@ class Hero{
     public targetx:number;
     public targety:number;
     
+    public maxhp:number;
     public hp:number;
     public hpRecovery:number;
     public mp:number;
@@ -99,8 +100,8 @@ class Hero{
         }else {
             mc.right = this.positions[position][1];
         }
-
         this.hp = this.heroMessage[name].hp;
+        this.maxhp = this.hp;
         this.hpRecovery = this.heroMessage[name].hpRecovery;
         this.mp = this.heroMessage[name].mp;
         this.mpRecovery = this.heroMessage[name].mpRecovery;
