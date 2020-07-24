@@ -1,5 +1,5 @@
 class Hero{
-    public mc:egret.MovieClip;
+    public mc:eui.Image;
     public flag:number;
     public targetx:number;
     public targety:number;
@@ -16,9 +16,10 @@ class Hero{
     public critDamage:number;
     public critRate:number;
     public manaDamage:number;
-
+    public target:Hero;
     public team:number;
-    public heroNumber = {
+
+    public heroMessage = {
     foot:{
         hp:120,
         hpRecovery:10,
@@ -69,35 +70,48 @@ class Hero{
         manaDamage:20,
     }
 };
+        public img_sources = {
+            foot:"swordman_png",
+            archer:"bowman_png"
+        };
+        public positions = {
+            1: [20,50],
+            2: [30,100],
+            3: [40,150]
+        }
+    constructor(team:number,position:number,name:string){
+        // var data = RES.getRes("test_json");
+        // var txtr = RES.getRes("test_png");
+        // var mcFactory:egret.MovieClipDataFactory = new egret.MovieClipDataFactory( data, txtr );
+        // var mc1:egret.MovieClip = new egret.MovieClip(mcFactory.generateMovieClipData("1"));
+        // this.mc = mc1;
+        
+        this.mc = this.createEuiImageByName(this.img_sources[name]);
+        console.log(this.img_sources['foot']);
+        console.log(RES.getRes("swordman_png"));
+        var mc  = this.mc;  
+        mc.addEventListener(egret.Event.ENTER_FRAME,this.attackAndCheck,this);
+        mc.width = 20 ;
+        mc.height = 20;
+        mc.top = this.positions[position][0];
+        if(team == 1){
+            mc.left = this.positions[position][1];           
+        }else {
+            mc.right = this.positions[position][1];
+        }
 
-    constructor(team:number,name:string){
-        var data = RES.getRes("test_json");
-        var txtr = RES.getRes("test_png");
-        var mcFactory:egret.MovieClipDataFactory = new egret.MovieClipDataFactory( data, txtr );
-        var mc1:egret.MovieClip = new egret.MovieClip(mcFactory.generateMovieClipData("1"));
-        this.mc = mc1;
-        var that = this;
-        this.mc.addEventListener(egret.Event.ENTER_FRAME,this.move,this);
-        this.mc.anchorOffsetX = 53;
-        this.mc.anchorOffsetY = 58.5;
-        this.mc.scaleX = 1;
-        this.mc.x = 53;
-        this.mc.y = 458.5;
-        this.targetx = 1000;
-        this.targety = 1000;
-
-        this.hp = this.heroNumber[name].hp;
-        this.hpRecovery = this.heroNumber[name].hpRecovery;
-        this.mp = this.heroNumber[name].mp;
-        this.mpRecovery = this.heroNumber[name].mpRecovery;
-        this.phyArmor = this.heroNumber[name].phyArmor;
-        this.manaArmor = this.heroNumber[name].manaArmor;
-        this.phyMissRate = this.heroNumber[name].phyMissRate;
-        this.phyDamage = this.heroNumber[name].phyDamage;
-        this.attackSpeed = this.heroNumber[name].attackSpeed;
+        this.hp = this.heroMessage[name].hp;
+        this.hpRecovery = this.heroMessage[name].hpRecovery;
+        this.mp = this.heroMessage[name].mp;
+        this.mpRecovery = this.heroMessage[name].mpRecovery;
+        this.phyArmor = this.heroMessage[name].phyArmor;
+        this.manaArmor = this.heroMessage[name].manaArmor;
+        this.phyMissRate = this.heroMessage[name].phyMissRate;
+        this.phyDamage = this.heroMessage[name].phyDamage;
+        this.attackSpeed = this.heroMessage[name].attackSpeed;
         this.critDamage = this.phyDamage*2.0;
-        this.critRate = this.heroNumber[name].critRate;
-        this.manaDamage = this.heroNumber[name].manaDamage;
+        this.critRate = this.heroMessage[name].critRate;
+        this.manaDamage = this.heroMessage[name].manaDamage;
         //从英雄数据中获取数值
 
         this.flag = 1;
@@ -109,43 +123,24 @@ class Hero{
             this.mc.scaleX = -1; 
         }
     }
-    public move(event:egret.TouchEvent):void{
+    public attackAndCheck(event:egret.TouchEvent):void{
         if(this.getHp() == 0){
-            this.mc.removeEventListener(egret.Event.ENTER_FRAME,this.move,this);
+            this.mc.removeEventListener(egret.Event.ENTER_FRAME,this.attackAndCheck,this);
             this.mc.parent.removeChild(this.mc);
-        }
-        if(this.mc.hitTestPoint(this.targetx,this.targety)){
-                if(this.flag == 1){
-                    this.mc.gotoAndPlay("attack1",1);
-                    this.flag = 0;
-                }else{
-                    this.mc.gotoAndPlay("attack2",1);                    
-                    this.flag = 1; 
-                }
-                this.hp = this.hp - this.phyDamage;
+        }         
+            this.target.hp = this.target.hp - this.phyDamage;
                 //Math.random()>critRate?phyDamage:phyDamage*2.0;
                 //物理伤害公式，可计算是否暴击
-        }else{
-                if(this.flag == 1){
-                    this.mc.gotoAndPlay("move1",1);
-                    this.flag = 0;
-                }
-                else{
-                    this.mc.gotoAndPlay("move2",1);
-                    this.flag = 1;
-                }
-            if (this.team == 1){      
-                this.mc.x = this.mc.x + 4;
-            }else{
-                this.mc.x = this.mc.x - 4;
-            }
-        }    
     }
-    public setTargetPosition(targetx,targety):void{
-        this.targetx = targetx;
-        this.targety = targety;
+    public getTarget(target:Hero):void{
+        this.target = target;
     }
     public getHp(){
         return this.hp;
+    }
+    private createEuiImageByName(name: string): eui.Image {
+        let result = new eui.Image();
+        result.texture = RES.getRes(name);
+        return result;
     }
 }

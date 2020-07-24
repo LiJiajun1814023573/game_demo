@@ -145,6 +145,16 @@
 			"name": "test_png",
 			"type": "image",
 			"url": "assets/test.png"
+		},
+		{
+			"name": "bowman_png",
+			"type": "image",
+			"url": "assets/bowman.png"
+		},
+		{
+			"name": "swordman_png",
+			"type": "image",
+			"url": "assets/swordman.png"
 		}
 	]
 }
