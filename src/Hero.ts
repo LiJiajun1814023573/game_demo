@@ -1,3 +1,4 @@
+//建议子类继承父类Hero，否则各品类全部定义在此类中代码可拓展性低
 class Hero{
     public mc:eui.Image;
     public flag:number;
@@ -80,14 +81,10 @@ class Hero{
             2: [40,80],
         }
     constructor(team:number,position:number,name:string){
-        // var data = RES.getRes("test_json");
-        // var txtr = RES.getRes("test_png");
-        // var mcFactory:egret.MovieClipDataFactory = new egret.MovieClipDataFactory( data, txtr );
-        // var mc1:egret.MovieClip = new egret.MovieClip(mcFactory.generateMovieClipData("1"));
-        // this.mc = mc1;
         
         this.mc = this.createEuiImageByName(this.img_sources[name]);
         var mc  = this.mc;  
+        //可以改为定时器,因为无帧动画，帧率意义不大，改为定时器后main.ts中的舞台帧率也可以不管了。
         mc.addEventListener(egret.Event.ENTER_FRAME,this.attackAndCheck,this);
         mc.width = 100;
         mc.height = 100;

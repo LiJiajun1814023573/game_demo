@@ -1,7 +1,7 @@
 {
 	"groups": [
 		{
-			"keys": "checkbox_select_disabled_png,checkbox_select_down_png,checkbox_select_up_png,checkbox_unselect_png,selected_png,border_png,header_png,radiobutton_select_disabled_png,radiobutton_select_down_png,radiobutton_select_up_png,radiobutton_unselect_png,roundthumb_png,thumb_png,track_png,tracklight_png,handle_png,off_png,on_png,button_down_png,button_up_png,thumb_pb_png,track_pb_png,track_sb_png,bg_jpg,egret_icon_png,description_json,test_json,test_png,bowman_png,swordman_png,platformer_background_2_png,accept_png,cancel_png,energy_png,mana_png,message_container_png,pointer_location_png,time_png,mage_png",
+			"keys": "checkbox_select_disabled_png,checkbox_select_down_png,checkbox_select_up_png,checkbox_unselect_png,selected_png,border_png,header_png,radiobutton_select_disabled_png,radiobutton_select_down_png,radiobutton_select_up_png,radiobutton_unselect_png,roundthumb_png,thumb_png,track_png,tracklight_png,handle_png,off_png,on_png,button_down_png,button_up_png,thumb_pb_png,track_pb_png,track_sb_png,bg_jpg,egret_icon_png,description_json,test_json,test_png,bowman_png,swordman_png,platformer_background_2_png,accept_png,cancel_png,energy_png,mana_png,message_container_png,pointer_location_png,time_png,mage_png,mage2_png",
 			"name": "preload"
 		}
 	],
@@ -167,45 +167,49 @@
 			"url": "assets/accept.png"
 		},
 		{
-			"name":"cacel_png",
+			"name": "cacel_png",
 			"type": "image",
 			"url": "assets/cancel.png"
 		},
 		{
-			"name":"energy_png",
+			"name": "energy_png",
 			"type": "image",
 			"url": "assets/energy.png"
 		},
 		{
-			"name":"health_png",
+			"name": "health_png",
 			"type": "image",
 			"url": "assets/health.png"
-		},		
+		},
 		{
-			"name":"mana_png",
+			"name": "mana_png",
 			"type": "image",
 			"url": "assets/mana.png"
-		},		
+		},
 		{
-			"name":"message_container_png",
+			"name": "message_container_png",
 			"type": "image",
 			"url": "assets/message_container.png"
-		},		
+		},
 		{
-			"name":"pointer_location_png",
+			"name": "pointer_location_png",
 			"type": "image",
 			"url": "assets/pointer_location.png"
 		},
 		{
-			"name":"time_png",
+			"name": "time_png",
 			"type": "image",
 			"url": "assets/time.png"
 		},
 		{
-			"name":"mage_png",
+			"name": "mage_png",
+			"type": "image",
+			"url": "assets/mage.png"
+		},
+		{
+			"name": "mage2_png",
 			"type": "image",
 			"url": "assets/mage.png"
 		}
-		
 	]
 }
