@@ -1,10 +1,10 @@
-//建议子类继承父类Hero，否则各品类全部定义在此类中代码可拓展性低
 class Hero{
     public mc:eui.Image;
     public flag:number;
     public targetx:number;
     public targety:number;
     
+    public maxhp:number;
     public hp:number;
     public hpRecovery:number;
     public mp:number;
@@ -73,30 +73,35 @@ class Hero{
 };
         public img_sources = {
             foot:"swordman_png",
-            archer:"bowman_png",
-            mage: "mage_png"
+            archer:"bowman_png"
         };
         public positions = {
-            1: [80,50],
-            2: [40,80],
+            1: [20,50],
+            2: [30,100],
+            3: [40,150]
         }
     constructor(team:number,position:number,name:string){
+        // var data = RES.getRes("test_json");
+        // var txtr = RES.getRes("test_png");
+        // var mcFactory:egret.MovieClipDataFactory = new egret.MovieClipDataFactory( data, txtr );
+        // var mc1:egret.MovieClip = new egret.MovieClip(mcFactory.generateMovieClipData("1"));
+        // this.mc = mc1;
         
         this.mc = this.createEuiImageByName(this.img_sources[name]);
+        console.log(this.img_sources['foot']);
+        console.log(RES.getRes("swordman_png"));
         var mc  = this.mc;  
-        //可以改为定时器,因为无帧动画，帧率意义不大，改为定时器后main.ts中的舞台帧率也可以不管了。
         mc.addEventListener(egret.Event.ENTER_FRAME,this.attackAndCheck,this);
-        mc.width = 100;
-        mc.height = 100;
+        mc.width = 20 ;
+        mc.height = 20;
         mc.top = this.positions[position][0];
         if(team == 1){
             mc.left = this.positions[position][1];           
         }else {
             mc.right = this.positions[position][1];
-            mc.scaleX = -1;
         }
-
         this.hp = this.heroMessage[name].hp;
+        this.maxhp = this.hp;
         this.hpRecovery = this.heroMessage[name].hpRecovery;
         this.mp = this.heroMessage[name].mp;
         this.mpRecovery = this.heroMessage[name].mpRecovery;
@@ -109,7 +114,6 @@ class Hero{
         this.critRate = this.heroMessage[name].critRate;
         this.manaDamage = this.heroMessage[name].manaDamage;
         //从英雄数据中获取数值
-
         this.flag = 1;
         if(team == 1){
             this.team = 1;

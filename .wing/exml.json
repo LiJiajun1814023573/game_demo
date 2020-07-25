@@ -1,17 +1,28 @@
 {
-    "1737954fa1a": {
-        "path": "..\\resource\\eui_skins\\StartScene.ts",
-        "class": "StartScene",
-        "parentPath": ""
-    },
-    "1737a62b483": {
-        "path": "GameScene.ts",
-        "class": "GameScene",
-        "parentPath": ""
-    },
-    "1737a704065": {
-        "path": "EndScene.ts",
-        "class": "EndScene",
-        "parentPath": ""
-    }
+  "1737954fa1a": {
+    "path": "..\\resource\\eui_skins\\StartScene.ts",
+    "class": "StartScene",
+    "parentPath": ""
+  },
+  "1737a62b483": {
+    "path": "GameScene.ts",
+    "class": "GameScene",
+    "parentPath": ""
+  },
+  "1737a704065": {
+    "path": "EndScene.ts",
+    "class": "EndScene",
+    "parentPath": ""
+  },
+  "global": {
+    "globalBindingDataTestObj": [],
+    "gridColor": 8421504,
+    "gridEnabled": false,
+    "gridSize": "10",
+    "globalRulerEnable": true,
+    "globalAdsorbEnable": true
+  },
+  "173864ee466": {
+    "bindingDataTestObj": []
+  }
 }

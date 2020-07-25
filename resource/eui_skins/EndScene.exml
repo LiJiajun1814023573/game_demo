@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <e:Skin class="EndSceneSkin" width="480" height="600" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" >
 	<w:Config id="1737a704065" ></w:Config>
-	<e:Panel id="end_panel" width="480" height="600" x="0" y="0"/>
+	<e:Panel id="end_panel" width="480" height="600" x="0" y="0">
+		<e:Label id="Time_used" text="战斗时间:" x="90" y="285" textColor="0x000000"/>
+		<e:Label id="DPS" text="最高DPS:" x="90" y="355" textColor="0x000000"/>
+		<e:Label id="damage" text="总计伤害:" x="90" y="423" textColor="0x000000"/>
+		<e:Rect width="415" height="439" x="0" y="146.35" anchorOffsetX="-41.5" anchorOffsetY="65.85" fillColor="0xed8523" fillAlpha="0.3" strokeColor="0xffffff"/>
+		<e:Label id="ID" text="你击败了ID选手\r打得不错" x="135" y="159" size="31" textColor="0x000000" textAlign="center"/>
+	</e:Panel>
 </e:Skin>
