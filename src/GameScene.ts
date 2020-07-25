@@ -23,12 +23,12 @@ class GameScene extends Scene {
 	}
 	protected onComplete(){
 
-		this.first_hero.texture = RES.getRes("swordman_png");
+		this.first_hero.texture = RES.getRes("mage_png");
 		this.second_hero.texture = RES.getRes("bowman_png");
-        this.hero11 = new Hero(1,1,"foot");
+        this.hero11 = new Hero(1,1,"mage");
 		this.hero12 = new Hero(1,2,"archer");;
-		this.hero21 = new Hero(2,1,"archer");
-		this.hero22 = new Hero(2,2,"foot");
+		this.hero21 = new Hero(2,1,"foot");
+		this.hero22 = new Hero(2,2,"mage");
 		var heros = [this.hero11,this.hero12,this.hero21,
 		this.hero22,
 		]

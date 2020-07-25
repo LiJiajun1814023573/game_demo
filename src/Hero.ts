@@ -72,7 +72,8 @@ class Hero{
 };
         public img_sources = {
             foot:"swordman_png",
-            archer:"bowman_png"
+            archer:"bowman_png",
+            mage: "mage_png"
         };
         public positions = {
             1: [80,50],
@@ -86,10 +87,6 @@ class Hero{
         // this.mc = mc1;
         
         this.mc = this.createEuiImageByName(this.img_sources[name]);
-        //测试start
-        console.log(this.img_sources['foot']);
-        console.log(RES.getRes("swordman_png"));
-        //end
         var mc  = this.mc;  
         mc.addEventListener(egret.Event.ENTER_FRAME,this.attackAndCheck,this);
         mc.width = 100;

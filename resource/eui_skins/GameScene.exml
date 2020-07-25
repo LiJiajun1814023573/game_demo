@@ -7,10 +7,13 @@
 		<e:Group width="100%" height="50%" x="0" y="0">
 			<e:Image id="game_background" source="platformer_background_2_png" x="0" y="0" width="100%" height="100%" anchorOffsetY="0"/>
 			<e:Image id="timer" source="time_png" width="22%" height="10%" x="191" y="37" horizontalCenter="0" top="10"/>
+			<e:Label id="time_label" text="60" horizontalCenter="0" borderColor="0xd34c4c" border="false" backgroundColor="0xe83737" background="false" bold="true" textColor="0x020101" top="10"/>
+			<e:Label id="player1_name" text="player1" x="26" y="62" textColor="0x0bc1ae" bold="true" top="30" left="20"/>
+			<e:Label id="player2_name" text="player2" x="378" y="40" bold="true" top="30" right="20"/>
 		</e:Group>
 		<e:Group width="100%" height="50%" x="0">
-			<e:Image width="100%" height="100%" x="3" source="message_container_png" y="0"/>
-			<e:Button id="game_button" label="" width="50" height="50" bottom="20" horizontalCenter="0" locked="true">
+			<e:Image width="100%" height="100%" x="3" source="message_container_png" y="0" locked="true"/>
+			<e:Button id="game_button" label="" width="50" height="50" bottom="5" horizontalCenter="0">
 			<e:skinName>
 				<e:Skin states="up,down,disabled">
 				<e:Image width="100%" height="100%" source="accept_png"/>
@@ -21,6 +24,12 @@
 			<e:Group bottom="40" top="40" left="80" right="80">
 				<e:Image id="first_hero" width="20%" height="33%" left="20" top="20"/>
 				<e:Image id="second_hero" width="20%" height="33%" left="20" bottom="20"/>
+				<e:Image id="health_1" width="200" height="20" source="health_png" left="100" top="20"/>
+				<e:Image id="health_2" width="200" height="20" source="health_png" bottom="80" left="100"/>
+				<e:Image id="mana_1" width="200" height="20" source="mana_png" top="40" left="100"/>
+				<e:Image id="mana_2" width="200" height="20" source="mana_png" bottom="60" left="100"/>
+				<e:Group id="skills" width="198" height="30" x="107" y="93" top="70" left="105"/>
+				<e:Group id="skills_2" width="198" x="110" y="174" height="30" left="105" bottom="20"/>
 			</e:Group>
 		</e:Group>
 		<e:layout>
