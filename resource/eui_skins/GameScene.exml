@@ -32,18 +32,54 @@
 					<e:Button id="skill_11" label="技1" x="-11" y="8" width="66" height="30" left="0" top="0" enabled="true">
 						<e:skinName>
 							<e:Skin states="up,down,disabled">
-							<e:Image width="100%" height="100%" source="accept_png"/>
+							<e:Image width="100%" height="100%" source="accept_png" source.down="pointer_location_png"/>
+							<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+							</e:Skin>
+						</e:skinName>
+
+					</e:Button>
+					<e:Button id="skill_12" label="技2" x="66" y="0" width="66" height="30">
+						<e:skinName>
+							<e:Skin states="up,down,disabled">
+							<e:Image width="100%" height="100%" source="accept_png" source.down="pointer_location_png"/>
 							<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
 							</e:Skin>
 						</e:skinName>
 					</e:Button>
-					<e:Button id="skill_12" label="技2" x="66" y="0" width="66" height="30"/>
-					<e:Button id="skill_13" label="技3" x="72" y="0" width="66" height="30" right="0" top="0"/>
+					<e:Button id="skill_13" label="技3" x="72" y="0" width="66" height="30" right="0" top="0">
+						<e:skinName>
+							<e:Skin states="up,down,disabled">
+							<e:Image width="100%" height="100%" source="accept_png" source.down="pointer_location_png"/>
+							<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+							</e:Skin>
+						</e:skinName>
+					</e:Button>
 				</e:Group>
 				<e:Group id="skills_2" width="198" x="110" y="174" height="30" left="105" bottom="20">
-					<e:Button id="skill_21" label="技1" x="0" y="0" width="66" height="30"/>
-					<e:Button id="skill_22" label="技2" x="66" y="0" width="66" height="30"/>
-					<e:Button id="skill_23" label="技3" width="66" height="30" right="0" top="0"/>
+					<e:Button id="skill_21" label="技1" x="0" y="0" width="66" height="30">
+						<e:skinName>
+							<e:Skin states="up,down,disabled">
+							<e:Image width="100%" height="100%" source="accept_png" source.down="pointer_location_png"/>
+							<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+							</e:Skin>
+						</e:skinName>
+					</e:Button>
+					<e:Button id="skill_22" label="技2" x="66" y="0" width="66" height="30">
+						<e:skinName>
+							<e:Skin states="up,down,disabled">
+							<e:Image width="100%" height="100%" source="accept_png" source.down="pointer_location_png"/>
+							<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+							</e:Skin>
+						</e:skinName>
+					</e:Button>
+					<e:Button id="skill_23" label="技3" width="66" height="30" right="0" top="0">
+						<e:skinName>
+							<e:Skin states="up,down,disabled">
+							<e:Image width="100%" height="100%" source="accept_png" source.down="pointer_location_png"/>
+							<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+							</e:Skin>
+						</e:skinName>
+					</e:Button>
 				</e:Group>
 			</e:Group>
 		</e:Group>

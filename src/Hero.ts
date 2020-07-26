@@ -1,3 +1,4 @@
+//为维持可拓展性，可分子类继承Hero
 class Hero{
     public mc:eui.Image;
     public flag:number;
@@ -73,12 +74,12 @@ class Hero{
 };
         public img_sources = {
             foot:"swordman_png",
-            archer:"bowman_png"
+            archer:"bowman_png",
+            mage: "mage_png"
         };
         public positions = {
-            1: [20,50],
-            2: [30,100],
-            3: [40,150]
+            1: [40,50],
+            2: [80,100]
         }
     constructor(team:number,position:number,name:string){
         // var data = RES.getRes("test_json");
@@ -88,16 +89,17 @@ class Hero{
         // this.mc = mc1;
         
         this.mc = this.createEuiImageByName(this.img_sources[name]);
-        console.log(this.img_sources['foot']);
-        console.log(RES.getRes("swordman_png"));
+
+
         var mc  = this.mc;  
         mc.addEventListener(egret.Event.ENTER_FRAME,this.attackAndCheck,this);
-        mc.width = 20 ;
-        mc.height = 20;
+        mc.width = 80 ;
+        mc.height = 80;
         mc.top = this.positions[position][0];
         if(team == 1){
             mc.left = this.positions[position][1];           
         }else {
+            mc.scaleX = -1;
             mc.right = this.positions[position][1];
         }
         this.hp = this.heroMessage[name].hp;

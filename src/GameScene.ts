@@ -1,3 +1,4 @@
+//定义的eui.Image和eui.Button都可以直接获取，
 class GameScene extends Scene {
 	public hero11: Hero;
     public hero12: Hero;
@@ -6,7 +7,24 @@ class GameScene extends Scene {
 	public first_hero: eui.Image;
 	public second_hero: eui.Image;
 	public timer: eui.Image;
+//通过遮罩来得到控制血量和蓝量长度
+	public health_1:eui.Image;
+	public health_2:eui.Image;
+	
+	public mana_1:eui.Image;
+	public mana_2:eui.Image;
+	
 	public game_button:eui.Button;
+//改变text来改动时间
+	public time_label: eui.Label;
+
+//设置skill按钮的enabled属性控制是否禁用
+	public skill_11: eui.Button;
+	public skill_12: eui.Button;
+	public skill_13: eui.Button;
+	public skill_21: eui.Button;
+	public skill_22: eui.Button;
+	public skill_23: eui.Button;
 	public constructor() {
 		super();
 	}
