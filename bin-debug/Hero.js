@@ -1,6 +1,7 @@
 var __reflect = (this && this.__reflect) || function (p, c, t) {
     p.__class__ = c, t ? t.push(c) : t = [c], p.__types__ = p.__types__ ? t.concat(p.__types__) : t;
 };
+//为维持可拓展性，可分子类继承Hero
 var Hero = (function () {
     function Hero(team, position, name) {
         // var data = RES.getRes("test_json");
@@ -103,9 +104,9 @@ var Hero = (function () {
             this.mc.removeEventListener(egret.Event.ENTER_FRAME, this.attackAndCheck, this);
             this.mc.parent.removeChild(this.mc);
         }
-        this.target.hp = this.target.hp - this.phyDamage;
-        //Math.random()>critRate?phyDamage:phyDamage*2.0;
-        //物理伤害公式，可计算是否暴击
+        var finalDamage = Math.random() > this.critRate ? this.phyDamage : this.phyDamage * 2.0 - this.target.phyArmor;
+        //物理伤害（暴击或不暴击）- 物抗 
+        this.target.hp = Math.random() > this.target.phyMissRate ? (this.target.hp - finalDamage) : 0; //可能会闪避本次普通攻击
     };
     Hero.prototype.getTarget = function (target) {
         this.target = target;
