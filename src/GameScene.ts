@@ -19,7 +19,7 @@ class GameScene extends Scene {
 	public time_label: eui.Label;
 
 //设置skill按钮的enabled属性控制是否禁用
-	public skill_11: eui.Button;
+	public skill_11: eui.Button;//各英雄1,2号技能为单体，3号技能为aoe
 	public skill_12: eui.Button;
 	public skill_13: eui.Button;
 	public skill_21: eui.Button;
@@ -28,6 +28,8 @@ class GameScene extends Scene {
 	public constructor() {
 		super();
 	}
+
+	protected 
 
 	protected partAdded(partName:string,instance:any):void
 	{
@@ -61,9 +63,75 @@ class GameScene extends Scene {
         for (let i = 0; i < 4; i++ ){
 		this.addChild(mcs[i]);
 		}
-        this.game_button.addEventListener(egret.TouchEvent.TOUCH_TAP, this.tap, this);
+		
+		//倒计时
+		this.time_label.text = "60" ;
+		var timer:egret.Timer = new egret.Timer(1000,60);
+		timer.addEventListener(egret.TimerEvent.TIMER,onTimer,this);
+		timer.addEventListener(egret.TimerEvent.TIMER_COMPLETE,onTimerComplete,this);
+		timer.start();
+		function onTimer(evt:egret.TimerEvent):void {
+        	this.time_label.text--;
+		}
+		function onTimerComplete(evt:egret.TimerEvent):void {
+        	
+		}
 
+		this.skill_11.addEventListener(egret.TouchEvent.TOUCH_TAP, this.skill_11_onTouch, this);//技能按钮监听器
+		this.skill_12.addEventListener(egret.TouchEvent.TOUCH_TAP, this.skill_12_onTouch, this);
+		this.skill_13.addEventListener(egret.TouchEvent.TOUCH_TAP, this.skill_13_onTouch, this);
+		this.skill_21.addEventListener(egret.TouchEvent.TOUCH_TAP, this.skill_21_onTouch, this);
+		this.skill_22.addEventListener(egret.TouchEvent.TOUCH_TAP, this.skill_22_onTouch, this);
+		this.skill_23.addEventListener(egret.TouchEvent.TOUCH_TAP, this.skill_23_onTouch, this);
+		this.game_button.addEventListener(egret.TouchEvent.TOUCH_TAP, this.tap, this);5
     }
+
+	protected skill_11_onTouch(e){//单体伤害技能
+		if(this.hero11.mp>=20)
+		{this.hero21.hp-=20;
+
+		this.hero11.mp-=20;}
+	}
+
+	protected skill_12_onTouch(e){//单体增益技能
+		if(this.hero11.mp>=20)
+		{this.hero12.phyDamage+=5;
+
+		this.hero11.mp-=20;}
+	}
+
+	protected skill_13_onTouch(e){//群体沉默技能
+		if(this.hero11.mp>=50)
+		{this.hero21.mp-=40;
+		this.hero22.mp-=40;
+
+		this.hero11.mp-=50;}
+	}
+
+	protected skill_21_onTouch(e){//单体吸血技能
+		if(this.hero11.mp>=20)
+		{this.hero22.hp-=20;
+
+		this.hero12.hp+=20;}
+	}
+
+	protected skill_22_onTouch(e){//单体伤害技能
+		if(this.hero11.mp>=20)
+		{this.hero22.hp-=40;
+
+		this.hero12.mp-=20;}
+	}
+
+	protected skill_23_onTouch(e){//群体破防技能
+		if(this.hero11.mp>=50)
+		{this.hero21.hp-=30;
+		this.hero22.hp-=30;
+		this.hero21.phyArmor-=5;
+		this.hero22.phyArmor-=5;
+
+		this.hero12.mp-=50;}
+	}
+
 	protected tap(e){
 		let s1:EndScene = new EndScene();
 		SceneManager.Instance.pushScene(s1);

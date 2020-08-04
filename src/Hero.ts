@@ -130,9 +130,9 @@ class Hero{
             this.mc.removeEventListener(egret.Event.ENTER_FRAME,this.attackAndCheck,this);
             this.mc.parent.removeChild(this.mc);
         }         
-            this.target.hp = this.target.hp - this.phyDamage;
-                //Math.random()>critRate?phyDamage:phyDamage*2.0;
-                //物理伤害公式，可计算是否暴击
+            var finalDamage = Math.random()>this.critRate?this.phyDamage:this.phyDamage*2.0 - this.target.phyArmor;
+                              //物理伤害（暴击或不暴击）- 物抗 
+            this.target.hp = Math.random()>this.target.phyMissRate?(this.target.hp - finalDamage):0;//可能会闪避本次普通攻击
     }
     public getTarget(target:Hero):void{
         this.target = target;
@@ -140,7 +140,7 @@ class Hero{
     public getHp(){
         return this.hp;
     }
-    private createEuiImageByName(name: string): eui.Image {
+    private createEuiImageByName(name:string): eui.Image {
         let result = new eui.Image();
         result.texture = RES.getRes(name);
         return result;
